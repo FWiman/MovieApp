@@ -1,0 +1,310 @@
+#root {
+  max-width: auto;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.App {
+  position: relative;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.carousel-wrapper {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  width: 100%;
+}
+
+.carousel-container h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  color: whitesmoke;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.carousel-item {
+  position: relative;
+  width: 1300px; /* Adjust this value according to the desired width */
+  height: auto;
+  border-radius: 20px;
+  transition: transform 0.3s;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  flex-grow: 1;
+}
+
+.no-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 300px;
+  background-color: #ccc;
+  color: #999;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.heading {
+  font-size: 2rem; /* Adjust the font size */
+  font-weight: bold; /* Adjust the font weight */
+  text-align: center; /* Center the text */
+  color: whitesmoke; /* Adjust the text color */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a text shadow */
+  margin-bottom: 1rem; /* Add margin to separate the text from the carousel */
+}
+
+.search-input {
+  margin: 50px;
+  font-size: 1rem;
+  padding: 0.5rem;
+  color: whitesmoke;
+  border: 1px solid white; /* Add a black outline */
+  background-color: transparent !important; /* Make the input bar a bit see-through */
+  border-radius: 4px;
+  outline: none;
+  width: 300px;
+}
+
+.search-input:focus {
+  border-color: #0099ff;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.search-button {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: black;
+  color: #ffffff;
+  background-color: transparent !important;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-button:hover {
+  background-color: #007acc;
+}
+
+.search-results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.search-results h4 {
+  display: flex;
+  font-size: 2rem;
+  font-weight: bold;
+  color: whitesmoke;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+}
+
+.search-result-item {
+  position: relative;
+  margin: 10px;
+  width: auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  transition: transform 0.3s;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-result-item:hover {
+  transform: scale(1.1);
+  z-index: 1;
+}
+
+.search-result-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  flex-grow: 1;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px;
+  max-width: 80%;
+  max-height: 80%;
+  overflow: auto;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.movie-info-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Add this for the modal animation */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.movie-info-modal {
+  position: relative;
+  background: linear-gradient(rgba(80, 80, 80, 0.953), rgb(244, 244, 244));
+  width: 90%;
+  max-width: 800px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: auto;
+
+  /* Add this line for the modal animation */
+  animation: modalFadeIn 0.7s ease-out;
+}
+
+.close-button {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  font-size: 1.5rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.movie-info-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.movie-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  color: whitesmoke;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  margin-bottom: 1rem;
+}
+
+.release-date {
+  position: absolute;
+  top: 45px;
+  left: 35px;
+  font-size: 1rem;
+  color: black;
+}
+
+.movie-poster {
+  border-radius: 15px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  display: block;
+}
+
+.movie-details {
+  margin-top: 20px;
+}
+
+.overview {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.rating {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
