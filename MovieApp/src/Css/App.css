@@ -6,9 +6,12 @@
 }
 
 .App {
+  display: flex;
+  flex-direction: column;
   position: relative;
   overflow: hidden;
   justify-content: center;
+  align-items: center;
 }
 
 .background-video {
@@ -94,28 +97,46 @@
 }
 
 .heading {
-  font-size: 2rem; /* Adjust the font size */
-  font-weight: bold; /* Adjust the font weight */
-  text-align: center; /* Center the text */
-  color: whitesmoke; /* Adjust the text color */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a text shadow */
-  margin-bottom: 1rem; /* Add margin to separate the text from the carousel */
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: whitesmoke;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.search-wrapper {
+  display: flex;
+  background: linear-gradient(rgba(80, 80, 80, 0.953), rgb(244, 244, 244));
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  border-radius: 20px;
+  opacity: 0.8;
 }
 
 .search-input {
-  margin: 50px;
+  margin: 20px;
   font-size: 1rem;
   padding: 0.5rem;
-  color: whitesmoke;
-  border: 1px solid white; /* Add a black outline */
-  background-color: transparent !important; /* Make the input bar a bit see-through */
+  color: black;
+  border: 1px solid black; /* Add a black outline */
   border-radius: 4px;
-  outline: none;
+  outline: black;
   width: 300px;
 }
 
 .search-input:focus {
-  border-color: #0099ff;
+  border-color: transparent;
   background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
@@ -124,18 +145,19 @@
   padding: 0.5rem 1rem;
   background-color: black;
   color: #ffffff;
-  background-color: transparent !important;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
+  margin-bottom: 5px;
 }
 
 .search-button:hover {
-  background-color: #007acc;
+  background-color: transparent;
 }
 
 .search-results {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
 }

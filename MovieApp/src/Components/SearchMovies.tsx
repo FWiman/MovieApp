@@ -58,18 +58,19 @@ const SearchMovies: React.FC = () => {
   };
 
   return (
-    <div>
-      <input
-        type="text"
-        className="search-input"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        placeholder="Search for movies"
-      />
-      <button onClick={handleSearch} className="search-button">
-        Search
-      </button>
-      <h4 className="heading">Search Results</h4>
+    <div className="search-container">
+      <div className="search-wrapper">
+        <input
+          type="text"
+          className="search-input"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Search for movies"
+        />
+        <button onClick={handleSearch} className="search-button">
+          Search
+        </button>
+      </div>
       <ul className="search-results">
         {movies.map((movie) => (
           <li key={movie.id} className="search-results-item">

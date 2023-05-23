@@ -6,11 +6,7 @@ interface ProviderLogoProps {
   logos: string[];
 }
 
-const ProviderLogo: React.FC<ProviderLogoProps> = ({
-  movieId,
-  mediaType,
-  logos = [],
-}) => {
+const ProviderLogo: React.FC<ProviderLogoProps> = ({ logos = [] }) => {
   return (
     <div
       style={{
@@ -28,8 +24,8 @@ const ProviderLogo: React.FC<ProviderLogoProps> = ({
             src={logo}
             alt="provider logo"
             style={{
-              width: "40px",
-              height: "40px",
+              width: "50px",
+              height: "50px",
               margin: "5px",
               borderRadius: "8px",
             }}
@@ -41,13 +37,4 @@ const ProviderLogo: React.FC<ProviderLogoProps> = ({
 
 export default ProviderLogo;
 
-// const [providerLogos, setProviderLogos] = useState<any[]>([]);
-
-// useEffect(() => {
-//   const fetchProviderLogos = async () => {
-//     const logos = await getProviderLogoURLs(movieId, mediaType);
-//     setProviderLogos(logos);
-//   };
-
-//   fetchProviderLogos();
-// }, [movieId, mediaType]);
+// FIXA SÅ LOGON ÄR OLIKA STYLES BEROENDE PÅ CAROUSEL/INFOMODAL
