@@ -1,0 +1,25 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: linear-gradient(
+    90deg,
+    #39ff14 10%,
+    transparent 20%,
+    transparent 80%,
+    #39ff14 90%
+  );
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+}
+
+.nav-link {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  color: black;
+  margin: 0 10px;
+  text-decoration: none;
+}

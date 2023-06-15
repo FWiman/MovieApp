@@ -43,7 +43,7 @@ const MovieInfoModal: React.FC<MovieInfoModalProps> = ({
         <div className="movie-details">
           <p className="overview">{movie.overview}</p>
           <p className="rating">
-            Rating on IMDB: {movie.vote_average.toFixed(2)}
+            Rating on IMDB: {movie.vote_average.toFixed(1)}
           </p>
         </div>
         {trailer && (

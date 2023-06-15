@@ -1,27 +1,13 @@
-#root {
-  max-width: auto;
-  margin: 0 auto;
-  padding: 1rem;
-  text-align: center;
-}
-
+html,
+body,
+#root,
 .App {
+  background-image: url("/wallpaper-mania.com_High_resolution_wallpaper_background_ID_77700374577.jpg");
   display: flex;
   flex-direction: column;
-  position: relative;
-  overflow: hidden;
-  justify-content: center;
-  align-items: center;
-}
-
-.background-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
   height: 100%;
-  object-fit: cover;
-  z-index: -1;
+  margin: 0;
+  padding: 0;
 }
 
 .carousel-wrapper {
@@ -41,6 +27,7 @@
 }
 
 .carousel-container h2 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,7 +47,7 @@
   padding: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .carousel-item {
@@ -68,11 +55,9 @@
   width: 1300px; /* Adjust this value according to the desired width */
   height: auto;
   border-radius: 20px;
-  transition: transform 0.3s;
+  transition: transform 0.9s;
   overflow: hidden;
   cursor: pointer;
-  display: flex;
-  flex-direction: column;
 }
 
 .carousel-item img {
@@ -80,7 +65,6 @@
   height: 100%;
   display: block;
   object-fit: cover;
-  flex-grow: 1;
 }
 
 .no-image {
@@ -115,7 +99,6 @@
 
 .search-wrapper {
   display: flex;
-  background: linear-gradient(rgba(80, 80, 80, 0.953), rgb(244, 244, 244));
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -128,23 +111,23 @@
   margin: 20px;
   font-size: 1rem;
   padding: 0.5rem;
-  color: black;
-  border: 1px solid black; /* Add a black outline */
+  color: whitesmoke;
+  border: 1px solid #39ff14; /* Add a black outline */
   border-radius: 4px;
-  outline: black;
+  outline: #39ff14;
   width: 300px;
 }
 
 .search-input:focus {
   border-color: transparent;
-  background-color: rgba(255, 255, 255, 0.1) !important;
+  background-color: black !important;
 }
 
 .search-button {
   font-size: 1rem;
   padding: 0.5rem 1rem;
-  background-color: black;
-  color: #ffffff;
+  background-color: #39ff14;
+  color: black;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -156,6 +139,7 @@
 }
 
 .search-results {
+  max-width: 50%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -247,22 +231,22 @@
 @keyframes modalFadeIn {
   from {
     opacity: 0;
-    transform: scale(0.6);
+    transform: scale(0.1);
   }
   to {
     opacity: 1;
-    transform: scale(1.1);
+    transform: scale(1);
   }
 }
 
 .movie-info-modal {
   position: relative;
-  background: linear-gradient(rgba(80, 80, 80, 0.953), rgb(244, 244, 244));
-  width: 90%;
-  max-width: 800px;
+  background: black;
+  max-width: min-content;
+  max-height: auto;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 1px 5px 5px #39ff14;
   overflow: auto;
 
   /* Add this line for the modal animation */
@@ -271,9 +255,10 @@
 
 .close-button {
   position: absolute;
-  top: 1px;
-  left: 1px;
+  top: 2px;
+  left: 2px;
   font-size: 1.5rem;
+  color: whitesmoke;
   border: none;
   background: transparent;
   cursor: pointer;
@@ -293,10 +278,11 @@
   align-items: center;
   margin: 0;
   padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: 500;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   color: whitesmoke;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   margin-bottom: 1rem;
 }
 
@@ -305,7 +291,7 @@
   top: 45px;
   left: 35px;
   font-size: 1rem;
-  color: black;
+  color: whitesmoke;
 }
 
 .movie-poster {
@@ -317,6 +303,9 @@
 }
 
 .movie-details {
+  color: whitesmoke;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: none;
   margin-top: 20px;
 }
 
@@ -329,4 +318,32 @@
 .rating {
   font-size: 1.2rem;
   font-weight: bold;
+}
+
+/* ABOUT + CONTACT CSS */
+.about-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 1px 5px 5px #39ff14;
+  background-color: black;
+  color: whitesmoke;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.about-text {
+  color: whitesmoke;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  line-height: 1.5;
 }
