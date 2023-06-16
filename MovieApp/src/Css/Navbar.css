@@ -5,10 +5,10 @@
   padding: 30px;
   background: linear-gradient(
     90deg,
-    #ffd700 10%,
+    #0000ff 10%,
     transparent 20%,
     transparent 80%,
-    #ffd700 90%
+    #0000ff 90%
   );
 }
 
@@ -18,12 +18,8 @@
 }
 
 .nav-link {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: bold;
-  font-size: 1.2rem;
   color: black;
-  margin: 0 10px;
-  text-decoration: none;
+  margin: 0 20px;
 }
 
 .logo {

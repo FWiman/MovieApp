@@ -2,12 +2,15 @@ html,
 body,
 #root,
 .App {
-  background-image: url("/wallpaper-mania.com_High_resolution_wallpaper_background_ID_77700374577.jpg");
+  animation-name: loadupAnimation;
+  animation-duration: 3s;
+  background-image: url("pictures_originals_2014_Backgrounds_Black_curtain_on_the_wallpaper_078590_.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  margin: 0;
-  padding: 0;
 }
 
 .carousel-wrapper {
@@ -111,22 +114,24 @@ body,
   margin: 20px;
   font-size: 1rem;
   padding: 0.5rem;
-  color: whitesmoke;
-  border: 1px solid #ffd700; /* Add a black outline */
+  color: black;
+  border: 2px solid #0000ff; /* Add a black outline */
   border-radius: 4px;
-  outline: #39ff14;
-  width: 300px;
+  width: 400px;
 }
 
 .search-input:focus {
   border-color: transparent;
   background-color: black !important;
+  color: whitesmoke;
 }
 
 .search-button {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
   font-size: 1rem;
   padding: 0.5rem 1rem;
-  background-color: #ffd700;
+  background-color: #0000ff;
   color: black;
   border-radius: 4px;
   cursor: pointer;
@@ -239,6 +244,15 @@ body,
   }
 }
 
+@keyframes loadupAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .movie-info-modal {
   position: relative;
   background: black;
@@ -246,7 +260,7 @@ body,
   max-height: auto;
   padding: 20px;
   border-radius: 20px;
-  box-shadow: 0 1px 5px 5px #ffd700;
+  box-shadow: 0 1px 5px 5px #0000ff;
   overflow: auto;
 
   /* Add this line for the modal animation */
@@ -329,19 +343,17 @@ body,
   margin: 20px;
   padding: 20px;
   border-radius: 20px;
-  box-shadow: 0 1px 5px 5px #ffd700;
+  box-shadow: 0 1px 5px 5px #0000ff;
   background-color: black;
   color: whitesmoke;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: bold;
-  font-size: 1.2rem;
   line-height: 1.5;
 }
 
 .about-text {
   color: whitesmoke;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: bold;
+  font-weight: none;
   margin-top: 20px;
   margin-bottom: 20px;
   font-size: 1.2rem;
