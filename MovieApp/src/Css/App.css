@@ -112,7 +112,7 @@ body,
   font-size: 1rem;
   padding: 0.5rem;
   color: whitesmoke;
-  border: 1px solid #39ff14; /* Add a black outline */
+  border: 1px solid #ffd700; /* Add a black outline */
   border-radius: 4px;
   outline: #39ff14;
   width: 300px;
@@ -126,7 +126,7 @@ body,
 .search-button {
   font-size: 1rem;
   padding: 0.5rem 1rem;
-  background-color: #39ff14;
+  background-color: #ffd700;
   color: black;
   border-radius: 4px;
   cursor: pointer;
@@ -246,7 +246,7 @@ body,
   max-height: auto;
   padding: 20px;
   border-radius: 20px;
-  box-shadow: 0 1px 5px 5px #39ff14;
+  box-shadow: 0 1px 5px 5px #ffd700;
   overflow: auto;
 
   /* Add this line for the modal animation */
@@ -329,7 +329,7 @@ body,
   margin: 20px;
   padding: 20px;
   border-radius: 20px;
-  box-shadow: 0 1px 5px 5px #39ff14;
+  box-shadow: 0 1px 5px 5px #ffd700;
   background-color: black;
   color: whitesmoke;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;

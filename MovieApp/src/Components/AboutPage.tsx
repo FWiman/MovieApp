@@ -17,9 +17,9 @@ const AboutPage: React.FC = () => {
       </p>
       <p className="about-text">
         This is a simple movie app that uses the TMDB API to display trending
-        movies and search for movies. It was built using Typescript, Styled
-        Components, Redux Toolkit, Axios, Material UI, SWR, NextJS, and React
-        Router
+        movies and tv-shows + search for movies and tv-shows. It was built using
+        Typescript, Styled Components, Redux Toolkit, Axios, Material UI, SWR,
+        NextJS, and React Router
       </p>
       <p className="about-text">
         ps, it is not optimized for telephone use atm but its coming!
