@@ -157,7 +157,6 @@ const TrendingContent: React.FC = () => {
             swipeable
             centerMode
             centerSlidePercentage={16}
-            emulateTouch
             selectedItem={4}
           >
             {trendingMovies.map((movie) => (
@@ -183,7 +182,6 @@ const TrendingContent: React.FC = () => {
             swipeable
             centerMode
             centerSlidePercentage={16}
-            emulateTouch
             selectedItem={4}
           >
             {trendingTvShows.map((tvShow) => (
@@ -209,7 +207,6 @@ const TrendingContent: React.FC = () => {
             swipeable
             centerMode
             centerSlidePercentage={16}
-            emulateTouch
             selectedItem={4}
           >
             {topRatedMovies.map((movie) => (
@@ -235,7 +232,6 @@ const TrendingContent: React.FC = () => {
             swipeable
             centerMode
             centerSlidePercentage={16}
-            emulateTouch
             selectedItem={4}
           >
             {topRatedTvShows.map((tvShow) => (
