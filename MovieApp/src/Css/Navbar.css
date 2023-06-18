@@ -3,13 +3,7 @@
   justify-content: space-between;
   position: relative;
   padding: 30px;
-  background: linear-gradient(
-    90deg,
-    #0000ff 10%,
-    transparent 20%,
-    transparent 80%,
-    #0000ff 90%
-  );
+  background: black;
 }
 
 .nav-left,
@@ -25,7 +19,7 @@
 .logo {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 90%; /* FIXA!!!!!!! */
   transform: translate(-50%, -50%);
-  width: 500px;
+  width: 250px;
 }
