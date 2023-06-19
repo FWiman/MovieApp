@@ -1,6 +1,6 @@
 import React from "react";
-import ProviderLogo from "./ProviderLogo";
-import { Movie } from "../types";
+import ProviderLogo from "../ProviderLogo/ProviderLogo";
+import { Movie } from "../../types";
 
 interface MovieInfoModalProps {
   movie: Movie;

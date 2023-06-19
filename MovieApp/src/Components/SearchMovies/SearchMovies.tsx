@@ -3,10 +3,10 @@ import {
   searchMoviesAndTvShows,
   getTrailer,
   getProviderLogoURLs,
-} from "../Server/api";
-import MovieInfoModal from "./MovieInfoModal";
-import MovieCard from "./MovieCard";
-import { Movie } from "../types";
+} from "../../Server/api";
+import MovieInfoModal from "../MovieInfoModal/MovieInfoModal";
+import MovieCard from "../MovieCard/MovieCard";
+import { Movie } from "../../types";
 
 const SearchMovies: React.FC = () => {
   const [query, setQuery] = useState("");

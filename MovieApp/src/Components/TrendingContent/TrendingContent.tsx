@@ -6,13 +6,13 @@ import {
   getTrendingTvShows,
   getTopRatedMovies,
   getTopRatedTvShows,
-} from "../Server/api";
+} from "../../Server/api";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-import MovieCard from "./MovieCard";
-import MovieInfoModal from "./MovieInfoModal";
-import { Movie } from "../types";
+import MovieCard from "../MovieCard/MovieCard";
+import MovieInfoModal from "../MovieInfoModal/MovieInfoModal";
+import { Movie } from "../../types";
 
 const TrendingContent: React.FC = () => {
   const [trendingMovies, setTrendingMovies] = useState<any[]>([]);

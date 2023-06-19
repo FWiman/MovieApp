@@ -1,6 +1,6 @@
 import React from "react";
-import { Movie } from "../types";
-import ProviderLogo from "./ProviderLogo";
+import { Movie } from "../../types";
+import ProviderLogo from "../ProviderLogo/ProviderLogo";
 
 interface MovieCardProps {
   movie: Movie;

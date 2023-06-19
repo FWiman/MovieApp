@@ -7,11 +7,11 @@ import {
 import { useEffect } from "react";
 import ReactGA from "react-ga";
 import "./Css/App.css";
-import SearchMovies from "./Components/SearchMovies";
-import TrendingContent from "./Components/TrendingContent";
-import Navbar from "./Components/Navbar";
-import AboutPage from "./Components/AboutPage";
-import ContactPage from "./Components/ContactPage";
+import SearchMovies from "./Components/SearchMovies/SearchMovies";
+import TrendingContent from "./Components/TrendingContent/TrendingContent";
+import Navbar from "./Components/Navbar/Navbar";
+import AboutPage from "./Components/AboutPage - ContactPage/AboutPage";
+import ContactPage from "./Components/AboutPage - ContactPage/ContactPage";
 
 declare global {
   interface Window {
