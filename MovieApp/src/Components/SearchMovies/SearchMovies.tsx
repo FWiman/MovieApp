@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   searchMoviesAndTvShows,
   getTrailer,
@@ -7,9 +7,9 @@ import {
 import MovieInfoModal from "../MovieInfoModal/MovieInfoModal";
 import MovieCard from "../MovieCard/MovieCard";
 import { Movie } from "../../types";
+import { useLocation } from "react-router-dom";
 
 const SearchMovies: React.FC = () => {
-  const [query, setQuery] = useState("");
   const [movies, setMovies] = useState<any[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedMovie, setSelectedMovie] = useState<any | null>(null);
@@ -28,18 +28,31 @@ const SearchMovies: React.FC = () => {
     }
   };
 
-  const handleSearch = async () => {
-    try {
-      const response = await searchMoviesAndTvShows(query);
-      setMovies(response.results);
+  const location = useLocation();
 
-      response.results.forEach((movie: Movie) => {
-        fetchProviderLogos(movie.id, movie.media_type);
-      });
-    } catch (error) {
-      console.error("Error searching for movies", error);
-    }
+  const parseQueryParam = (): string | null => {
+    return new URLSearchParams(location.search).get("query");
   };
+
+  const query = parseQueryParam();
+
+  useEffect(() => {
+    const fetchFlicks = async () => {
+      if (!query) return;
+      try {
+        const response = await searchMoviesAndTvShows(query);
+        setMovies(response.results);
+
+        response.results.forEach((movie: Movie) => {
+          fetchProviderLogos(movie.id, movie.media_type);
+        });
+      } catch (error) {
+        console.error("Error searching for flicks", error);
+      }
+    };
+
+    fetchFlicks();
+  }, [location]);
 
   const openModal = async (movie: Movie) => {
     setSelectedMovie(movie);
@@ -59,18 +72,6 @@ const SearchMovies: React.FC = () => {
 
   return (
     <div className="search-container">
-      <div className="search-wrapper">
-        <input
-          type="text"
-          className="search-input"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search for movies"
-        />
-        <button onClick={handleSearch} className="search-button">
-          Search
-        </button>
-      </div>
       <ul className="search-results">
         {movies.map((movie) => (
           <li key={movie.id} className="search-results-item">

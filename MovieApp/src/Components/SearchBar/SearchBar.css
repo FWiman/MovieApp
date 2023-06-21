@@ -1,0 +1,47 @@
+.nav-link.open {
+  transform: translateX(100%);
+  transition: all 0.5s ease-in-out;
+}
+
+/* Search Bar Styling */
+
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  border: 2px solid #e1cc92;
+  border-radius: 5px;
+  padding: 5px;
+  width: 300px;
+  transition: all 0.5s ease-in-out;
+  transform: translateX(-100%); /* by default, hide the search bar */
+}
+
+.search-wrapper.open {
+  transform: translateX(
+    0%
+  ); /* when the open class is added, show the search bar */
+}
+
+.search-input {
+  color: #e1cc92;
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 5px;
+  background: none;
+}
+
+.search-button {
+  background: #e1cc92;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  cursor: pointer;
+  padding: 5px 10px;
+  margin-left: 10px;
+}
+
+.search-button:hover {
+  color: whitesmoke;
+  background: #d1bc82;
+}

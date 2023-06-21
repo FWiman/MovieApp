@@ -1,20 +1,39 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { FaEnvelope, FaHome, FaInfo, FaSearch } from "react-icons/fa";
 import "../../Css/Navbar.css";
 import logo from "../../assets/passale3.png";
+import SearchBar from "../SearchBar/SearchBar";
 
 const Navbar: React.FC = () => {
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleSearch = (query: string) => {
+    setIsSearchOpen(false);
+    navigate(`/search?query=${query}`);
+  };
+
   return (
     <nav className="navbar">
       <div className="nav-left">
         <img src={logo} alt="Logo" className="logo" />
-        <Link to="/" className="nav-link">
+        <Link
+          to="/"
+          className="nav-link"
+          onClick={() => setIsSearchOpen(false)}
+        >
           <FaHome size={30} color={"#e1cc92"} />
         </Link>
-        <Link to="/search" className="nav-link">
-          <FaSearch size={30} color={"#e1cc92"} />
-        </Link>
+        <FaSearch
+          size={30}
+          color={"#e1cc92"}
+          className={`nav-link ${isSearchOpen ? "open" : ""}`}
+          onClick={() => setIsSearchOpen(!isSearchOpen)}
+        />
+        {isSearchOpen && (
+          <SearchBar onSearch={handleSearch} isSearchOpen={isSearchOpen} />
+        )}
       </div>
       <div className="nav-center">
         <span className="navbar-text">FlickFinder</span>

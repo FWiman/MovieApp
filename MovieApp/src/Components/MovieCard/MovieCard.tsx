@@ -32,6 +32,7 @@ const MovieCard: React.FC<MovieCardProps> = ({
         movieId={movie.id}
         mediaType={movie.media_type}
         logos={logos}
+        isModal={false}
       />
     </div>
   );

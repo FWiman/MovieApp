@@ -39,6 +39,7 @@ const MovieInfoModal: React.FC<MovieInfoModalProps> = ({
           movieId={movie.id}
           mediaType={movie.media_type}
           logos={logos}
+          isModal={true}
         />
         <div className="movie-details">
           <p className="overview">{movie.overview}</p>
