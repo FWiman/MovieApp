@@ -12,6 +12,7 @@ import TrendingContent from "./Components/TrendingContent/TrendingContent";
 import Navbar from "./Components/Navbar/Navbar";
 import AboutPage from "./Components/AboutPage - ContactPage/AboutPage";
 import ContactPage from "./Components/AboutPage - ContactPage/ContactPage";
+import LoginPAge from "./Components/LoginPage/LoginPage";
 
 declare global {
   interface Window {
@@ -44,8 +45,8 @@ function App() {
         <GoogleAnalytics />
         <Navbar />
         <Routes>
+          <Route path="/" element={<LoginPAge />} />
           <Route path="/search" element={<SearchMovies />} />
-          <Route path="/" element={<TrendingContent />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
