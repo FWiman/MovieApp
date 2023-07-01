@@ -19,7 +19,7 @@ const Navbar: React.FC = () => {
       <div className="nav-left">
         <img src={logo} alt="Logo" className="logo" />
         <Link
-          to="/"
+          to="/trending"
           className="nav-link"
           onClick={() => setIsSearchOpen(false)}
         >

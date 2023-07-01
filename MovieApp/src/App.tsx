@@ -43,9 +43,10 @@ function App() {
     <Router>
       <div className="App">
         <GoogleAnalytics />
-        <Navbar />
+        {location.pathname !== "/" && <Navbar />}
         <Routes>
           <Route path="/" element={<LoginPAge />} />
+          <Route path="/trending" element={<TrendingContent />} />
           <Route path="/search" element={<SearchMovies />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
