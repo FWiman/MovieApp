@@ -4,7 +4,7 @@ import {
   Routes,
   useLocation,
 } from "react-router-dom";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import ReactGA from "react-ga";
 import "./Css/App.css";
 import SearchMovies from "./Components/SearchMovies/SearchMovies";
@@ -13,6 +13,10 @@ import Navbar from "./Components/Navbar/Navbar";
 import AboutPage from "./Components/AboutPage - ContactPage/AboutPage";
 import ContactPage from "./Components/AboutPage - ContactPage/ContactPage";
 import LoginPAge from "./Components/LoginPage/LoginPage";
+import {
+  UserContext,
+  UserProvider,
+} from "./Components/UserContext/userContext";
 
 declare global {
   interface Window {
@@ -39,19 +43,23 @@ function GoogleAnalytics() {
 }
 
 function App() {
+  const userContext = useContext(UserContext);
+
   return (
     <Router>
-      <div className="App">
-        <GoogleAnalytics />
-        {location.pathname !== "/" && <Navbar />}
-        <Routes>
-          <Route path="/" element={<LoginPAge />} />
-          <Route path="/trending" element={<TrendingContent />} />
-          <Route path="/search" element={<SearchMovies />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-        </Routes>
-      </div>
+      <UserProvider>
+        <div className="App">
+          <GoogleAnalytics />
+          {userContext && userContext.isUserLoggedIn && <Navbar />}
+          <Routes>
+            <Route path="/" element={<LoginPAge />} />
+            <Route path="/trending" element={<TrendingContent />} />
+            <Route path="/search" element={<SearchMovies />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Routes>
+        </div>
+      </UserProvider>
     </Router>
   );
 }

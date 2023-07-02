@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { UserContext } from "../UserContext/userContext";
 import { Link, useNavigate } from "react-router-dom";
 import { FaEnvelope, FaHome, FaInfo, FaSearch } from "react-icons/fa";
 import "../../Css/Navbar.css";
@@ -8,6 +9,11 @@ import SearchBar from "../SearchBar/SearchBar";
 const Navbar: React.FC = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const navigate = useNavigate();
+  const { isUserLoggedIn } = useContext(UserContext)!;
+
+  if (!isUserLoggedIn) {
+    return null;
+  }
 
   const handleSearch = (query: string) => {
     setIsSearchOpen(false);
