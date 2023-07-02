@@ -41,24 +41,41 @@ const LoginPAge: React.FC = () => {
       <div className="grid-container">
         <div className="grid">
           {trendingTvShows.map((tvShow, index) => {
-            const randomSize = sizes[Math.floor(Math.random() * sizes.length)];
+  const durations = ['15s', '20s', '25s',];
+  const randomDuration = durations[Math.floor(Math.random() * durations.length)];
+  const style = {
+    animationDuration: randomDuration,
+    animationTimingFunction: 'linear',
+    animationIterationCount: 'infinite',
+    animationDirection: 'alternate',
+  };
 
-            return (
-              <div key={index} className={`poster-wrapper ${randomSize}`}>
-                <MovieCard
-                  movie={tvShow}
-                  onClick={() => {}}
-                  isCarouselItem={true}
-                  logos={providers[tvShow.id] || []}
-                />
-              </div>
-            );
-          })}
+  const randomSize = sizes[Math.floor(Math.random() * sizes.length)];
+
+  return (
+    <div 
+      key={index} 
+      className={`poster-wrapper ${randomSize}`} 
+      style={style}
+    >
+      <MovieCard
+        movie={tvShow}
+        onClick={() => {}}
+        isCarouselItem={true}
+        logos={providers[tvShow.id] || []}
+      />
+    </div>
+  );
+})}
+
         </div>
       </div>
       <div className="form-wrapper">
         <h1 className="heading">Welcome!</h1>
-        <p className="about-text"> bla bla bla</p>
+        <p className="about-text"> To be able to use the website you need to register and login! :D When you have done that you will be able to
+        find trending content and top content and also search for that specific show or movie that you been looking for!
+        There you will get some info about the show or movie like a description, imdb rating, trailer and also on wich streaming service
+        you will be able to watch that specifc show or movie!! </p>
         <form className="form-container">
           <label className="form-label">
             Username:
