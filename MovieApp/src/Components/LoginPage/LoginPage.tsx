@@ -14,7 +14,7 @@ const LoginPage: React.FC = () => {
 
   const onSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    setIsUserLoggedIn(true);
+    setIsUserLoggedIn(false);
     window.location.href = "/trending"; // redirect to home page after login successfull!
   };
 
@@ -101,10 +101,12 @@ const LoginPage: React.FC = () => {
             Password:
             <input type="password" name="password" className="input" />
           </label>
-          <input type="submit" className="login-button"></input>
+          <button type="submit" className="login-button">
+            Login
+          </button>
           <button
-            type="submit"
-            className="login-button"
+            type="button"
+            className="register-button"
             onClick={() => setRegisterOpen(true)}
           >
             Register
