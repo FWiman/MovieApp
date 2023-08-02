@@ -2,10 +2,9 @@ import React, { useContext, useEffect, useState } from "react";
 import { getTrendingTvShows, getProviderLogoURLs } from "../../Server/api";
 import MovieCard from "../MovieCard/MovieCard";
 import "./LoginPage.css";
-import { Link } from "react-router-dom";
 import { UserContext } from "../UserContext/userContext";
 
-const LoginPAge: React.FC = () => {
+const LoginPage: React.FC = () => {
   const [isRegisterOpen, setRegisterOpen] = useState(false);
   const [trendingTvShows, setTrendingTvShows] = useState<any[]>([]);
   const [providers, setProviders] = useState<{ [key: number]: any }>({});
@@ -16,7 +15,7 @@ const LoginPAge: React.FC = () => {
   const onSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     setIsUserLoggedIn(true);
-    window.location.href = "/trending/"; // redirect to home page after login successfull!
+    window.location.href = "/trending"; // redirect to home page after login successfull!
   };
 
   useEffect(() => {
@@ -93,7 +92,7 @@ const LoginPAge: React.FC = () => {
             movie!!{" "}
           </p>
         </div>
-        <form className="form-container">
+        <form className="form-container" onSubmit={onSubmit}>
           <label className="form-label">
             Username:
             <input type="text" name="username" className="input" />
@@ -102,14 +101,9 @@ const LoginPAge: React.FC = () => {
             Password:
             <input type="password" name="password" className="input" />
           </label>
-
-          <button type="button" className="login-button">
-            <Link to="/trending" className="login-link">
-              Login
-            </Link>
-          </button>
+          <input type="submit" className="login-button"></input>
           <button
-            type="button"
+            type="submit"
             className="login-button"
             onClick={() => setRegisterOpen(true)}
           >
@@ -177,7 +171,7 @@ const LoginPAge: React.FC = () => {
             </label>
             <input type="submit" value="Register" className="register-button" />
             <button
-              type="button"
+              type="submit"
               className="register-button"
               onClick={() => setRegisterOpen(false)}
             >
@@ -190,4 +184,4 @@ const LoginPAge: React.FC = () => {
   );
 };
 
-export default LoginPAge;
+export default LoginPage;
