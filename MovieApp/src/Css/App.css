@@ -13,11 +13,12 @@ body,
   flex-direction: column;
 }
 
+/* CAROUSEL START */
 .carousel-wrapper {
   position: relative;
   justify-content: center;
   align-items: center;
-  padding-top: 150px;
+  padding-top: 170px;
 }
 
 .carousel-container {
@@ -25,9 +26,6 @@ body,
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
-  margin-top: 50px;
-  width: 100%;
 }
 
 .carousel-container h2 {
@@ -35,48 +33,51 @@ body,
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0;
-  padding: 0;
   font-size: 2rem;
   font-weight: bold;
   color: whitesmoke;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  margin-bottom: 1rem;
 }
 
 .carousel {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0;
-  width: 100%;
-  height: 100%;
   overflow: auto;
 }
 
 .carousel-item {
-  position: relative;
-  width: 1300px; /* desired width */
+  display: flex;
+  justify-content: center;
+  width: 80%; /* desired width */
   height: auto;
-  border-radius: 20px;
-  transition: transform 0.9s;
+  border-radius: 10px;
+  padding: 0;
+  margin: 0;
   overflow: hidden;
   cursor: pointer;
 }
 
-.carousel-item img {
+.slider-wrapper axis-horizontal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
-  display: block;
-  object-fit: cover;
+  padding-left: 2%;
+  padding-right: 2%;
+  margin: 0.5%;
+  overflow: auto;
 }
+
+/* CAROUSEL END */
 
 .no-image {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 200px;
-  height: 300px;
+  width: auto;
+  height: auto;
   background-color: #ccc;
   color: #999;
   font-size: 18px;
@@ -195,13 +196,13 @@ body,
 .movie-info-modal {
   position: relative;
   background: black;
-  max-width: 30%;
+  max-width: 50%;
   max-height: auto;
-  padding: 20px;
+  padding: 10px;
   border-radius: 20px;
   box-shadow: 0 1px 5px 5px #e1cc92;
   overflow: auto;
-  animation: modalFadeIn 0.2s ease-out;
+  animation: modalFadeIn 0.5s ease-out;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -241,8 +242,8 @@ body,
 
 .movie-poster {
   border-radius: 15px;
-  width: 100%;
-  max-width: 400px;
+  width: auto;
+  max-width: 300px;
   margin: 0 auto;
   display: block;
 }
@@ -260,6 +261,7 @@ body,
 }
 
 .rating {
+  color: red;
   font-size: 1.2rem;
   font-weight: bold;
 }
@@ -296,4 +298,3 @@ body,
   font-size: 1.2rem;
   line-height: 1.5;
 }
-

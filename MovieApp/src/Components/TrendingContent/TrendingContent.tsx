@@ -157,7 +157,7 @@ const TrendingContent: React.FC = () => {
             swipeable
             centerMode
             centerSlidePercentage={16}
-            selectedItem={4}
+            selectedItem={5}
           >
             {trendingMovies.map((movie) => (
               <MovieCard
@@ -182,7 +182,7 @@ const TrendingContent: React.FC = () => {
             swipeable
             centerMode
             centerSlidePercentage={16}
-            selectedItem={4}
+            selectedItem={5}
           >
             {trendingTvShows.map((tvShow) => (
               <MovieCard
@@ -207,7 +207,7 @@ const TrendingContent: React.FC = () => {
             swipeable
             centerMode
             centerSlidePercentage={16}
-            selectedItem={4}
+            selectedItem={5}
           >
             {topRatedMovies.map((movie) => (
               <MovieCard
@@ -232,7 +232,7 @@ const TrendingContent: React.FC = () => {
             swipeable
             centerMode
             centerSlidePercentage={16}
-            selectedItem={4}
+            selectedItem={5}
           >
             {topRatedTvShows.map((tvShow) => (
               <MovieCard
