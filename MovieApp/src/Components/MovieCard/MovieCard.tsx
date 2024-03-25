@@ -6,6 +6,7 @@ interface MovieCardProps {
   movie: Movie;
   onClick: (movie: Movie) => void;
   isCarouselItem: boolean;
+  isBigCarouselItem: boolean;
   logos: string[];
 }
 
@@ -13,11 +14,14 @@ const MovieCard: React.FC<MovieCardProps> = ({
   movie,
   onClick,
   isCarouselItem = false,
+  isBigCarouselItem = false,
   logos,
 }) => {
   return (
     <div
-      className={`search-result-item${isCarouselItem ? " carousel-item" : ""}`}
+      className={`search-result-item${isCarouselItem ? " carousel-item" : ""}${
+        isBigCarouselItem ? " big-carousel-item" : ""
+      }`}
       onClick={() => onClick(movie)}
     >
       {movie.poster_path ? (
@@ -27,6 +31,13 @@ const MovieCard: React.FC<MovieCardProps> = ({
         />
       ) : (
         <div className="no-image">No Image</div>
+      )}
+      {isBigCarouselItem && (
+        <div className="bigOverview">
+          <h3 className="bigTitle">{movie.title}</h3>
+          <p className="movie-info">{movie.overview}</p>
+          <ul className="provider-logos"></ul>
+        </div>
       )}
       <ProviderLogo
         movieId={movie.id}

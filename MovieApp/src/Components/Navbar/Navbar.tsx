@@ -23,7 +23,6 @@ const Navbar: React.FC = () => {
   return (
     <nav className="navbar">
       <div className="nav-left">
-        <img src={logo} alt="Logo" className="logo" />
         <Link
           to="/trending"
           className="nav-link"

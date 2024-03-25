@@ -13,15 +13,15 @@ const ProviderLogo: React.FC<ProviderLogoProps> = ({
 }) => {
   const logoStyle = isModal
     ? {
-        width: "60px",
-        height: "60px",
+        width: "auto",
+        height: "auto",
         margin: "10px",
         borderRadius: "16px",
         border: "2px solid #e1cc92",
       }
     : {
-        width: "40px",
-        height: "40px",
+        width: "auto",
+        height: "auto",
         margin: "5px",
         borderRadius: "8px",
       };

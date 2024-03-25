@@ -10,6 +10,7 @@
   align-items: center;
   position: fixed;
   width: 100%;
+  height: 5%;
   background: rgba(0, 0, 0, 0.8);
   z-index: 1;
   transition: all 0.5s ease;
@@ -23,14 +24,15 @@
 }
 
 .nav-link {
-  color: #e1cc92;
+  display: flex;
+  color: #ffd4b3;
   margin: 0 20px;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-  color: white;
+  color: #ffd4b3;
 }
 
 .logo {
@@ -42,10 +44,11 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #e1cc92;
+  color: #ffd4b3;
   font-size: 3rem;
   letter-spacing: 6px;
   text-transform: capitalize;
-  font-family: "Copperplate gothic";
+  text-shadow: 4px 4px 4px #5679cb;
+  font-family: "Roboto";
   font-weight: bold;
 }
