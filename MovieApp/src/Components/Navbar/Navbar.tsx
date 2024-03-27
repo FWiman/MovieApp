@@ -3,7 +3,6 @@ import { UserContext } from "../UserContext/userContext";
 import { Link, useNavigate } from "react-router-dom";
 import { FaEnvelope, FaHome, FaInfo, FaSearch } from "react-icons/fa";
 import "../../Css/Navbar.css";
-import logo from "../../assets/passale3.png";
 import SearchBar from "../SearchBar/SearchBar";
 
 const Navbar: React.FC = () => {
@@ -28,11 +27,11 @@ const Navbar: React.FC = () => {
           className="nav-link"
           onClick={() => setIsSearchOpen(false)}
         >
-          <FaHome size={30} color={"#e1cc92"} />
+          <FaHome size={30} color={"#2ee3a4"} />
         </Link>
         <FaSearch
           size={30}
-          color={"#e1cc92"}
+          color={"#2ee3a4"}
           className={`nav-link ${isSearchOpen ? "open" : ""}`}
           onClick={() => setIsSearchOpen(!isSearchOpen)}
         />
@@ -45,10 +44,10 @@ const Navbar: React.FC = () => {
       </div>
       <div className="nav-right">
         <Link to="/about" className="nav-link">
-          <FaInfo size={30} color={"#e1cc92"} />
+          <FaInfo size={30} color={"#2ee3a4"} />
         </Link>
         <Link to="/contact" className="nav-link">
-          <FaEnvelope size={30} color={"#e1cc92"} />
+          <FaEnvelope size={30} color={"#2ee3a4"} />
         </Link>
       </div>
     </nav>

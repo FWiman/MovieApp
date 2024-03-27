@@ -149,24 +149,23 @@ const TrendingContent: React.FC = () => {
 
   return (
     <div className="carousel-wrapper">
-      <div className="bigCarouselContainer">
+      <div className="carousel-container">
+        <h2 className="heading">Trending Movies This Week</h2>
         <Slider
-          className="bigCarouselItem"
+          className="carousel-item"
           dots={false}
           infinite={true}
-          speed={500}
-          slidesToShow={4}
-          arrows={true}
-          slidesToScroll={4}
+          slidesToShow={6}
+          slidesToScroll={6}
           initialSlide={0}
-          autoplay={true}
-          autoplaySpeed={10000}
+          draggable={true} // TEMPORARLY DRAGGABLE
+          arrows={true} // FIX SO ARROW SHOWS
           responsive={[
             {
               breakpoint: 1024,
               settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
+                slidesToShow: 5,
+                slidesToScroll: 5,
                 infinite: true,
                 dots: false,
               },
@@ -174,16 +173,16 @@ const TrendingContent: React.FC = () => {
             {
               breakpoint: 600,
               settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                initialSlide: 1,
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                initialSlide: 3,
               },
             },
             {
               breakpoint: 480,
               settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
+                slidesToShow: 3,
+                slidesToScroll: 3,
               },
             },
           ]}
@@ -201,212 +200,149 @@ const TrendingContent: React.FC = () => {
         </Slider>
       </div>
       <div className="carousel-container">
-        <div className="carousel">
-          <h2 className="heading">Trending Movies This Week</h2>
-          <Slider
-            className="carousel-item"
-            dots={false}
-            infinite={true}
-            speed={500}
-            slidesToShow={7}
-            slidesToScroll={7}
-            initialSlide={0}
-            draggable={true} // TEMPORARLY DRAGGABLE
-            arrows={true} // FIX SO ARROW SHOWS
-            responsive={[
-              {
-                breakpoint: 1024,
-                settings: {
-                  slidesToShow: 5,
-                  slidesToScroll: 5,
-                  infinite: true,
-                  dots: false,
-                },
-              },
-              {
-                breakpoint: 600,
-                settings: {
-                  slidesToShow: 3,
-                  slidesToScroll: 3,
-                  initialSlide: 3,
-                },
-              },
-              {
-                breakpoint: 480,
-                settings: {
-                  slidesToShow: 3,
-                  slidesToScroll: 3,
-                },
-              },
-            ]}
-          >
-            {trendingMovies.map((movie) => (
-              <MovieCard
-                key={movie.id}
-                movie={movie}
-                onClick={openModal}
-                isCarouselItem
-                isBigCarouselItem={false}
-                logos={providers[movie.id] || []}
-              />
-            ))}
-          </Slider>
-        </div>
-      </div>
-      <div className="carousel-container">
         <h2 className="heading">Trending TV Shows This Week</h2>
-        <div className="carousel">
-          <Slider
-            className="carousel-item"
-            dots={false}
-            infinite={true}
-            speed={500}
-            slidesToShow={7}
-            slidesToScroll={7}
-            initialSlide={0}
-            responsive={[
-              {
-                breakpoint: 1024,
-                settings: {
-                  slidesToShow: 5,
-                  slidesToScroll: 5,
-                  infinite: true,
-                  dots: false,
-                },
+        <Slider
+          className="carousel-item"
+          dots={false}
+          infinite={true}
+          slidesToShow={6}
+          slidesToScroll={6}
+          initialSlide={0}
+          arrows={true}
+          responsive={[
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 5,
+                slidesToScroll: 5,
+                infinite: true,
+                dots: false,
               },
-              {
-                breakpoint: 600,
-                settings: {
-                  slidesToShow: 3,
-                  slidesToScroll: 3,
-                  initialSlide: 3,
-                },
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                initialSlide: 3,
               },
-              {
-                breakpoint: 480,
-                settings: {
-                  slidesToShow: 3,
-                  slidesToScroll: 3,
-                },
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
               },
-            ]}
-          >
-            {trendingTvShows.map((tvShow) => (
-              <MovieCard
-                key={tvShow.id}
-                movie={tvShow}
-                onClick={openModal}
-                isCarouselItem
-                isBigCarouselItem={false}
-                logos={providers[tvShow.id] || []}
-              />
-            ))}
-          </Slider>
-        </div>
+            },
+          ]}
+        >
+          {trendingTvShows.map((tvShow) => (
+            <MovieCard
+              key={tvShow.id}
+              movie={tvShow}
+              onClick={openModal}
+              isCarouselItem
+              isBigCarouselItem={false}
+              logos={providers[tvShow.id] || []}
+            />
+          ))}
+        </Slider>
       </div>
       <div className="carousel-container">
         <h2 className="heading">Top Rated Movies</h2>
-        <div className="carousel">
-          <Slider
-            className="carousel-item"
-            dots={false}
-            infinite={true}
-            speed={500}
-            slidesToShow={7}
-            slidesToScroll={7}
-            initialSlide={0}
-            responsive={[
-              {
-                breakpoint: 1024,
-                settings: {
-                  slidesToShow: 5,
-                  slidesToScroll: 5,
-                  infinite: true,
-                  dots: false,
-                },
+        <Slider
+          className="carousel-item"
+          dots={false}
+          infinite={true}
+          slidesToShow={6}
+          slidesToScroll={6}
+          initialSlide={0}
+          responsive={[
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 5,
+                slidesToScroll: 5,
+                infinite: true,
+                dots: false,
               },
-              {
-                breakpoint: 600,
-                settings: {
-                  slidesToShow: 3,
-                  slidesToScroll: 3,
-                  initialSlide: 3,
-                },
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                initialSlide: 3,
               },
-              {
-                breakpoint: 480,
-                settings: {
-                  slidesToShow: 3,
-                  slidesToScroll: 3,
-                },
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
               },
-            ]}
-          >
-            {topRatedMovies.map((movie) => (
-              <MovieCard
-                key={movie.id}
-                movie={movie}
-                onClick={openModal}
-                isCarouselItem
-                isBigCarouselItem={false}
-                logos={providers[movie.id] || topRatedProviders[movie.id] || []}
-              />
-            ))}
-          </Slider>
-        </div>
+            },
+          ]}
+        >
+          {topRatedMovies.map((movie) => (
+            <MovieCard
+              key={movie.id}
+              movie={movie}
+              onClick={openModal}
+              isCarouselItem
+              isBigCarouselItem={false}
+              logos={providers[movie.id] || topRatedProviders[movie.id] || []}
+            />
+          ))}
+        </Slider>
       </div>
       <div className="carousel-container">
         <h2 className="heading">Top Rated TV Shows</h2>
-        <div className="carousel">
-          <Slider
-            className="carousel-item"
-            dots={false}
-            infinite={true}
-            speed={500}
-            slidesToShow={7}
-            slidesToScroll={7}
-            initialSlide={0}
-            responsive={[
-              {
-                breakpoint: 1024,
-                settings: {
-                  slidesToShow: 5,
-                  slidesToScroll: 5,
-                  infinite: true,
-                  dots: false,
-                },
+        <Slider
+          className="carousel-item"
+          dots={false}
+          infinite={true}
+          slidesToShow={6}
+          slidesToScroll={6}
+          initialSlide={0}
+          responsive={[
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 5,
+                slidesToScroll: 5,
+                infinite: true,
+                dots: false,
               },
-              {
-                breakpoint: 600,
-                settings: {
-                  slidesToShow: 3,
-                  slidesToScroll: 3,
-                  initialSlide: 3,
-                },
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                initialSlide: 3,
               },
-              {
-                breakpoint: 480,
-                settings: {
-                  slidesToShow: 3,
-                  slidesToScroll: 3,
-                },
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
               },
-            ]}
-          >
-            {topRatedTvShows.map((tvShow) => (
-              <MovieCard
-                key={tvShow.id}
-                movie={tvShow}
-                onClick={openModal}
-                isCarouselItem
-                isBigCarouselItem={false}
-                logos={
-                  providers[tvShow.id] || topRatedProviders[tvShow.id] || []
-                }
-              />
-            ))}
-          </Slider>
-        </div>
+            },
+          ]}
+        >
+          {topRatedTvShows.map((tvShow) => (
+            <MovieCard
+              key={tvShow.id}
+              movie={tvShow}
+              onClick={openModal}
+              isCarouselItem
+              isBigCarouselItem={false}
+              logos={providers[tvShow.id] || topRatedProviders[tvShow.id] || []}
+            />
+          ))}
+        </Slider>
       </div>
       {isModalOpen && selectedMovie && (
         <MovieInfoModal

@@ -71,6 +71,7 @@ const LoginPage: React.FC = () => {
                   movie={tvShow}
                   onClick={() => {}}
                   isCarouselItem={true}
+                  isBigCarouselItem={false}
                   logos={providers[tvShow.id] || []}
                 />
               </div>
@@ -79,27 +80,23 @@ const LoginPage: React.FC = () => {
         </div>
       </div>
       <div className="form-wrapper">
-        <div className="text-wrapper">
-          <h1 className="heading">Welcome!</h1>
-          <p className="form-text">
-            {" "}
-            To be able to use the website you need to register and login! :D
-            When you have done that you will be able to find trending content
-            and top content and also search for that specific show or movie that
-            you been looking for! There you will get some info about the show or
-            movie like a description, imdb rating, trailer and also on wich
-            streaming service you will be able to watch that specifc show or
-            movie!!{" "}
-          </p>
-        </div>
         <form className="form-container" onSubmit={onSubmit}>
+          <h1 className="heading">Welcome!</h1>
           <label className="form-label">
-            Username:
-            <input type="text" name="username" className="input" />
+            <input
+              type="text"
+              name="username"
+              className="input"
+              placeholder="Username"
+            />
           </label>
           <label className="form-label">
-            Password:
-            <input type="password" name="password" className="input" />
+            <input
+              type="password"
+              name="password"
+              className="input"
+              placeholder="Password"
+            />
           </label>
           <button type="submit" className="login-button">
             Login
@@ -136,7 +133,6 @@ const LoginPage: React.FC = () => {
               Type in ur information to register!{" "}
             </h1>
             <label className="form-label">
-              Username:
               <input
                 type="text"
                 name="username"
@@ -145,7 +141,6 @@ const LoginPage: React.FC = () => {
               />
             </label>
             <label className="form-label">
-              Password:
               <input
                 type="password"
                 name="password"
@@ -154,7 +149,6 @@ const LoginPage: React.FC = () => {
               />
             </label>
             <label className="form-label">
-              Confirm Password:
               <input
                 type="password"
                 name="confirmPassword"
@@ -163,7 +157,6 @@ const LoginPage: React.FC = () => {
               />
             </label>
             <label className="form-label">
-              Email:
               <input
                 type="email"
                 name="email"
