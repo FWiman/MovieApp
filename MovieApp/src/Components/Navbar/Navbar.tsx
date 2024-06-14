@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { UserContext } from "../UserContext/userContext";
 import { Link, useNavigate } from "react-router-dom";
 import { FaEnvelope, FaHome, FaInfo, FaSearch } from "react-icons/fa";
-import "../../Css/Navbar.css";
+import "../Navbar/Navbar.css";
 import SearchBar from "../SearchBar/SearchBar";
 
 const Navbar: React.FC = () => {
@@ -27,11 +27,11 @@ const Navbar: React.FC = () => {
           className="nav-link"
           onClick={() => setIsSearchOpen(false)}
         >
-          <FaHome size={30} color={"#2ee3a4"} />
+          <FaHome size={30} color={"whitesmoke"} />
         </Link>
         <FaSearch
           size={30}
-          color={"#2ee3a4"}
+          color={"whitesmoke"}
           className={`nav-link ${isSearchOpen ? "open" : ""}`}
           onClick={() => setIsSearchOpen(!isSearchOpen)}
         />
@@ -40,14 +40,14 @@ const Navbar: React.FC = () => {
         )}
       </div>
       <div className="nav-center">
-        <span className="navbar-text">FlickFinder</span>
+        <span className="navbar-text">STREAMWATCH</span>
       </div>
       <div className="nav-right">
         <Link to="/about" className="nav-link">
-          <FaInfo size={30} color={"#2ee3a4"} />
+          <FaInfo size={30} color={"whitesmoke"} />
         </Link>
         <Link to="/contact" className="nav-link">
-          <FaEnvelope size={30} color={"#2ee3a4"} />
+          <FaEnvelope size={30} color={"whitesmoke"} />
         </Link>
       </div>
     </nav>

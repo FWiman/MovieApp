@@ -17,7 +17,7 @@ const ProviderLogo: React.FC<ProviderLogoProps> = ({
         height: "auto",
         margin: "10px",
         borderRadius: "16px",
-        border: "2px solid #2ee3a4",
+        border: "2px solid rgb(137, 0, 0)",
       }
     : {
         width: "auto",
