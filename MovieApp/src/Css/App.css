@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Audiowide");
 
 body,
 html {
@@ -40,7 +39,7 @@ html {
 }
 
 .carousel-container h2 {
-  font-family: "Inter", sans-serif;
+  font-family: "AudioWide", sans-serif;
   display: flex;
   margin-left: 5px;
   justify-content: center;
@@ -154,6 +153,7 @@ html {
 
 .search-results h4 {
   display: flex;
+  font-family: "AudioWide", sans-serif;
   font-size: 2rem;
   font-weight: bold;
   color: whitesmoke;
@@ -273,7 +273,7 @@ html {
 }
 
 .movie-title {
-  font-family: "Inter", sans-serif;
+  font-family: "AudioWide", sans-serif;
   font-weight: lighter;
   font-size: 2.5rem;
   font-weight: 900;
@@ -283,7 +283,7 @@ html {
 
 .release-date {
   font-size: 1.3rem;
-  font-family: "Inter", sans-serif;
+  font-family: "AudioWide", sans-serif;
   color: whitesmoke;
   text-shadow: 10px 5px 10px black;
   margin-left: 10px;
@@ -310,7 +310,7 @@ html {
   align-items: center;
   color: whitesmoke;
   text-shadow: 10px 10px 10px black;
-  font-family: "Inter", sans-serif;
+  font-family: "AudioWide", sans-serif;
   font-size: 2.5rem;
   width: 80%;
   max-width: 90%;
@@ -324,7 +324,7 @@ html {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  font-family: "Inter", sans-serif;
+  font-family: "AudioWide", sans-serif;
   font-weight: lighter;
   font-size: 1.5rem;
   line-height: 1;
@@ -333,7 +333,7 @@ html {
 
 .rating {
   color: whitesmoke;
-  font-family: "Inter";
+  font-family: "AudioWide", sans-serif;
   text-shadow: 10px 5px 10px black;
   font-size: 1.2rem;
   font-weight: bold;
@@ -376,13 +376,13 @@ html {
   box-shadow: 0 1px 5px 5px rgb(137, 0, 0);
   background: linear-gradient(#0e2f8d, #5679cb);
   color: #ffd4b3;
-  font-family: "Inter";
+  font-family: "AudioWide", sans-serif;
   line-height: 1.5;
 }
 
 .about-text {
   color: #ffd4b3;
-  font-family: "Inter";
+  font-family: "AudioWide", sans-serif;
   font-weight: none;
   margin-top: 20px;
   margin-bottom: 20px;

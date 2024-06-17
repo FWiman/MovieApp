@@ -11,8 +11,9 @@ import MovieInfoModal from "../MovieInfoModal/MovieInfoModal";
 import { Movie } from "../../types";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "./MoviesComponent.modules.css";
 
-const TrendingMovies: React.FC = () => {
+const MoviesComponent: React.FC = () => {
   const [trendingMovies, setTrendingMovies] = useState<any[]>([]);
   const [topRatedMovies, setTopRatedMovies] = useState<any[]>([]);
   const [providers, setProviders] = useState<{ [key: number]: any }>({});
@@ -94,21 +95,22 @@ const TrendingMovies: React.FC = () => {
   }, []);
 
   return (
-    <div className="carousel-wrapper">
-      <div className="carousel-container">
+    <div className="carouselWrapper">
+      <div className="infoBoard"></div>
+      <div className="carouselContainer">
         <h2 className="heading">Trending Movies This Week</h2>
         <Slider
-          className="carousel-item"
+          className="carouselItem"
           dots={false}
           infinite={true}
-          slidesToShow={7}
-          slidesToScroll={7}
+          slidesToShow={6}
+          slidesToScroll={1}
           responsive={[
             {
               breakpoint: 1024,
               settings: {
-                slidesToShow: 6,
-                slidesToScroll: 6,
+                slidesToShow: 4,
+                slidesToScroll: 4,
               },
             },
             {
@@ -139,10 +141,10 @@ const TrendingMovies: React.FC = () => {
           ))}
         </Slider>
       </div>
-      <div className="carousel-container">
+      <div className="carouselContainer">
         <h2 className="heading">Top Rated Movies</h2>
         <Slider
-          className="carousel-item"
+          className="carouselItem"
           dots={false}
           infinite={true}
           slidesToShow={7}
@@ -195,4 +197,4 @@ const TrendingMovies: React.FC = () => {
   );
 };
 
-export default TrendingMovies;
+export default MoviesComponent;
