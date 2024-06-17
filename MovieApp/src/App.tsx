@@ -1,45 +1,24 @@
-import { BrowserRouter as Router, useLocation } from "react-router-dom";
-import { useEffect } from "react";
-import ReactGA from "react-ga";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Header from "./Components/Header/Header";
+import MainPage from "./Components/MainPage/MainPage";
+import MoviesPage from "./Components/MoviesComponent/MoviesComponent";
+import SeriesPage from "./Components/SeriesComponent/SeriesComponent";
 import "./Css/App.css";
-import { UserProvider } from "./Components/UserContext/userContext";
-import MainApp from "./Components/MainApp/MainApp";
 
-declare global {
-  interface Window {
-    GA_INITIALIZED: boolean;
-  }
-}
-
-const trackingId = import.meta.env.REACT_APP_GA_TRACKING_ID || "UA-000000-2";
-
-ReactGA.initialize(trackingId);
-
-function GoogleAnalytics() {
-  const location = useLocation();
-
-  useEffect(() => {
-    if (!window.GA_INITIALIZED) {
-      ReactGA.initialize(trackingId);
-      window.GA_INITIALIZED = true;
-    }
-    ReactGA.pageview(location.pathname + location.search);
-  }, [location]);
-
-  return null;
-}
-
-function App() {
+const App: React.FC = () => {
   return (
-    <UserProvider>
-      <div className="App">
-        <Router>
-          <GoogleAnalytics />
-          <MainApp />
-        </Router>
-      </div>
-    </UserProvider>
+    <div className="app-background">
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/movies" element={<MoviesPage />} />
+          <Route path="/series" element={<SeriesPage />} />
+        </Routes>
+      </Router>
+    </div>
   );
-}
+};
 
 export default App;

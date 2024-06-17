@@ -12,7 +12,6 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 
 import MovieCard from "../MovieCard/MovieCard";
@@ -165,8 +164,8 @@ const TrendingContent: React.FC = () => {
             {
               breakpoint: 1024,
               settings: {
-                slidesToShow: 5,
-                slidesToScroll: 5,
+                slidesToShow: 6,
+                slidesToScroll: 6,
                 infinite: true,
                 dots: false,
               },
