@@ -7,7 +7,6 @@ import { Movie } from "../../types";
 const MainPage: React.FC = () => {
   const [movies, setMovies] = useState<any[]>([]);
   const [tvShows, setTvShows] = useState<any[]>([]);
-  const [logos, setLogos] = useState<string[]>([]);
 
   useEffect(() => {
     const fetchTrendingContent = async () => {
@@ -54,7 +53,6 @@ const MainPage: React.FC = () => {
       </div>
       <div className={styles.bottomSection}>
         <div className={styles.contentList}>
-          <h2>Trending Movies</h2>
           <div className={styles.movieList}>
             {movies.map((movie) => (
               <MovieCard
@@ -69,7 +67,6 @@ const MainPage: React.FC = () => {
           </div>
         </div>
         <div className={styles.contentList}>
-          <h2>Trending TV Shows</h2>
           <div className={styles.tvShowList}>
             {tvShows.map((tvShow) => (
               <MovieCard
