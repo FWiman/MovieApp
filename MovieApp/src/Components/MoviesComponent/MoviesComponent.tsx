@@ -11,7 +11,7 @@ import MovieInfoModal from "../MovieInfoModal/MovieInfoModal";
 import { Movie } from "../../types";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "./MoviesComponent.modules.css";
+import "./MoviesComponent.module.css";
 
 const MoviesComponent: React.FC = () => {
   const [trendingMovies, setTrendingMovies] = useState<any[]>([]);
@@ -96,7 +96,6 @@ const MoviesComponent: React.FC = () => {
 
   return (
     <div className="carouselWrapper">
-      <div className="infoBoard"></div>
       <div className="carouselContainer">
         <h2 className="heading">Trending Movies This Week</h2>
         <Slider

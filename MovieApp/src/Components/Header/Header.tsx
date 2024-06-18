@@ -7,10 +7,9 @@ import logo from "../../assets/StreamWatchLogo.svg";
 
 interface SearchBarProps {
   onSearch: (query: string) => void;
-  isSearchOpen: boolean; // <-- add this prop
 }
 
-const Header: React.FC<SearchBarProps> = ({ onSearch, isSearchOpen }) => {
+const Header: React.FC<SearchBarProps> = ({ onSearch }) => {
   const [searchVisible, setSearchVisible] = useState(false);
   const [query, setQuery] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
