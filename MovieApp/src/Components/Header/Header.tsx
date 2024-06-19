@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import logo from "../../assets/StreamWatchLogo.svg";
+import logo from "../../assets/image.png";
 
 interface SearchBarProps {
   onSearch: (query: string) => void;

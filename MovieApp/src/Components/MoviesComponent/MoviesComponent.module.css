@@ -1,10 +1,19 @@
 @import url("https://fonts.googleapis.com/css?family=Audiowide");
 
-.carouselWrapper {
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  background-color: blue;
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.topSection {
+  flex: 1;
+}
+
+.bottomSection {
+  flex: 1;
+  padding: 20px;
 }
 
 .carouselContainer {
@@ -12,9 +21,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  margin-bottom: 20px;
 }
 
-.carouselContainer h2 {
+.heading {
   display: flex;
   margin-left: 5px;
   justify-content: center;
@@ -23,26 +33,14 @@
   font-size: 24px;
   font-weight: lighter;
   color: whitesmoke;
-  text-shadow: 2px 2px 4px rgb(137, 0, 0);
+  text-shadow: 2px 2px 4px grey;
 }
 
-.carouselItem {
-  display: flex;
+.carousel {
   width: 100%;
   border-radius: 5px;
   overflow: hidden;
   cursor: pointer;
-}
-
-.carouselItem .slider-wrapper axis-horizontal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  padding-left: 2%;
-  padding-right: 2%;
-  overflow: auto;
 }
 
 .slick-arrow {
@@ -80,4 +78,19 @@
 
 .slick-next:before {
   content: "→";
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .bottomSection {
+    padding: 10px;
+  }
+
+  .carouselContainer {
+    margin-bottom: 10px;
+  }
+
+  .heading {
+    font-size: 18px;
+  }
 }

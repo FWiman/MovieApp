@@ -8,10 +8,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(137, 0, 0);
   z-index: 1000;
   padding: 0 20px;
   box-sizing: border-box;
+  background: linear-gradient(0.25turn, #56387a, #99e4f3, #3f77bd);
 }
 
 .logoLinksContainer {
