@@ -1,6 +1,10 @@
 import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.css";
 import styles from "./TopSection.module.css";
 import { Movie } from "../../types";
+
+// Install the modules
 
 interface TopSectionProps {
   trendingMovies: Movie[];
@@ -13,35 +17,44 @@ const TopSection: React.FC<TopSectionProps> = ({
 }) => {
   return (
     <div className={styles.topSection}>
-      <div className={styles.heroSection}>
-        {trendingMovies.slice(0, 1).map((movie) => (
-          <div
-            key={movie.id}
-            className={`${styles.heroItem} ${styles.mainHeroItem}`}
-            onClick={() => openModal(movie)}
-          >
-            <img
-              src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
-              alt={movie.title}
-            />
-          </div>
-        ))}
-        <div className={styles.sideHeroContainer}>
-          {trendingMovies.slice(1, 6).map((movie, index) => (
-            <div
-              key={movie.id}
-              className={`${styles.heroItem} ${styles.sideHeroItem}`}
-              style={{ zIndex: 5 - index }}
-              onClick={() => openModal(movie)}
-            >
+      <Swiper
+        spaceBetween={50}
+        slidesPerView={1}
+        pagination={{ clickable: true }}
+        loop={true}
+        autoplay={{ delay: 5000 }}
+        className={styles.swiperContainer}
+      >
+        {trendingMovies.slice(0, 5).map((movie) => (
+          <SwiperSlide key={movie.id} className={styles.swiperSlide}>
+            <div className={styles.heroItem}>
               <img
-                src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
+                src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
                 alt={movie.title}
+                className={styles.mainHeroImage}
               />
+              <div className={styles.movieInfo}>
+                <h2 className={styles.movieTitle}>{movie.title}</h2>
+                <p className={styles.movieDescription}>{movie.overview}</p>
+                <div className={styles.movieDetails}>
+                  <span className={styles.movieRating}>
+                    ⭐ {movie.vote_average.toString().slice(0, 3)}
+                  </span>
+                  <span className={styles.movieReleaseDate}>
+                    {new Date(movie.release_date).toISOString().slice(0, 10)}
+                  </span>
+                </div>
+                <button
+                  className={styles.trailerButton}
+                  onClick={() => openModal(movie)}
+                >
+                  Watch Trailer
+                </button>
+              </div>
             </div>
-          ))}
-        </div>
-      </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 };

@@ -1,96 +1,32 @@
-@import url("https://fonts.googleapis.com/css?family=Audiowide");
-
 .pageWrapper {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  overflow-y: auto;
-}
-
-.topSection {
-  flex: 1;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .bottomSection {
-  flex: 1;
-  padding: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 20px; /* Adding margin to separate from top section */
 }
 
 .carouselContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  margin-bottom: 20px;
+  width: 90%;
+  margin: 20px 0;
 }
 
 .heading {
-  display: flex;
-  margin-left: 5px;
-  justify-content: center;
-  align-items: center;
-  font-family: "AudioWide";
+  font-family: "Audiowide", sans-serif;
   font-size: 24px;
-  font-weight: lighter;
   color: whitesmoke;
-  text-shadow: 2px 2px 4px grey;
+  text-shadow: 2px 2px 4px black;
 }
 
 .carousel {
   width: 100%;
-  border-radius: 5px;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.slick-arrow {
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-.slick-prev {
-  left: 10px;
-}
-
-.slick-next {
-  right: 10px;
-}
-
-.slick-prev:before,
-.slick-next:before {
-  font-family: "slick";
-  font-size: 20px;
-  line-height: 1;
-  color: whitesmoke;
-  opacity: 0.75;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.slick-prev:before {
-  content: "←";
-}
-
-.slick-next:before {
-  content: "→";
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
-  .bottomSection {
-    padding: 10px;
-  }
-
-  .carouselContainer {
-    margin-bottom: 10px;
-  }
-
-  .heading {
-    font-size: 18px;
-  }
 }

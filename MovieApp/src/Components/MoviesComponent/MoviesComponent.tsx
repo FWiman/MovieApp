@@ -105,7 +105,7 @@ const MoviesComponent: React.FC = () => {
             className={styles.carousel}
             dots={false}
             infinite={true}
-            slidesToShow={10}
+            slidesToShow={7}
             slidesToScroll={2}
             responsive={[
               {
@@ -149,7 +149,7 @@ const MoviesComponent: React.FC = () => {
             className={styles.carousel}
             dots={false}
             infinite={true}
-            slidesToShow={10}
+            slidesToShow={7}
             slidesToScroll={2}
             responsive={[
               {
