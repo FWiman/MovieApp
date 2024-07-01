@@ -13,8 +13,8 @@ const MainPage: React.FC = () => {
       try {
         const moviesResponse = await getTrendingMovies();
         const tvShowsResponse = await getTrendingTvShows();
-        setMovies(moviesResponse.results.slice(0, 6));
-        setTvShows(tvShowsResponse.results.slice(0, 6));
+        setMovies(moviesResponse.results.slice(0, 5));
+        setTvShows(tvShowsResponse.results.slice(0, 5));
       } catch (error) {
         console.error("Error fetching trending content", error);
       }

@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import styles from "./TopSection.module.css";
 import { Movie } from "../../types";
+import TrailerModal from "../TrailerModal/TrailerModal";
 
 // Install the modules
 
@@ -15,6 +16,16 @@ const TopSection: React.FC<TopSectionProps> = ({
   trendingMovies,
   openModal,
 }) => {
+  const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
+
+  const handleTrailerOpen = (movie: Movie) => {
+    setSelectedMovie(movie);
+  };
+
+  const handleTrailerClose = () => {
+    setSelectedMovie(null);
+  };
+
   return (
     <div className={styles.topSection}>
       <Swiper
@@ -38,15 +49,17 @@ const TopSection: React.FC<TopSectionProps> = ({
                 <p className={styles.movieDescription}>{movie.overview}</p>
                 <div className={styles.movieDetails}>
                   <span className={styles.movieRating}>
-                    ⭐ {movie.vote_average.toString().slice(0, 3)}
+                    ⭐ {movie.vote_average.toLocaleString().slice(0, 3)}
                   </span>
                   <span className={styles.movieReleaseDate}>
-                    {new Date(movie.release_date).toISOString().slice(0, 10)}
+                    {new Date(movie.release_date)
+                      .toLocaleDateString()
+                      .slice(0, 10)}
                   </span>
                 </div>
                 <button
                   className={styles.trailerButton}
-                  onClick={() => openModal(movie)}
+                  onClick={() => handleTrailerOpen(movie)}
                 >
                   Watch Trailer
                 </button>
@@ -55,6 +68,13 @@ const TopSection: React.FC<TopSectionProps> = ({
           </SwiperSlide>
         ))}
       </Swiper>
+      {selectedMovie && (
+        <TrailerModal
+          movieId={selectedMovie.id}
+          contentType="movie"
+          onClose={handleTrailerClose}
+        />
+      )}
     </div>
   );
 };
