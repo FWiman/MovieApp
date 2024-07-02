@@ -33,7 +33,7 @@ const TopSection: React.FC<TopSectionProps> = ({
         slidesPerView={1}
         pagination={{ clickable: true }}
         loop={true}
-        autoplay={{ delay: 5000 }}
+        autoplay={true}
         className={styles.swiperContainer}
       >
         {trendingMovies.slice(0, 5).map((movie) => (
