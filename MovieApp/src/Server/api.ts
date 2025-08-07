@@ -110,4 +110,3 @@ export const getTopRatedTvShows = async () => {
     throw error;
   }
 };
-// GETS THE UPCOMING CINEMA MOVIES
