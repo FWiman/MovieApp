@@ -1,0 +1,19 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Define gradients for a globe-like appearance -->
+  <defs>
+    <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:rgb(137,0,0);stop-opacity:1" />
+      <stop offset="100%" style="black;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Circle with gradient -->
+  <circle cx="100" cy="100" r="75" fill="url(#grad1)" />
+
+  <!-- Letters SW -->
+  <text x="10" y="140" font-family="cursive" font-size="100" fill="white" font-weight="bold">SW</text>
+  
+  <!-- Adding a shadow for depth -->
+  <text x="50" y="120" font-family="cursive" font-size="110" fill="white" font-weight="bold" 
+        stroke="black" stroke-width="2" stroke-linejoin="round" />
+</svg>

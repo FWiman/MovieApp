@@ -12,6 +12,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "swiper/swiper-bundle.css";
 
 import MovieCard from "../MovieCard/MovieCard";
 import MovieInfoModal from "../MovieInfoModal/MovieInfoModal";
@@ -155,17 +156,16 @@ const TrendingContent: React.FC = () => {
           className="carousel-item"
           dots={false}
           infinite={true}
-          slidesToShow={6}
-          slidesToScroll={6}
-          initialSlide={0}
+          slidesToShow={7}
+          slidesToScroll={7}
           draggable={true} // TEMPORARLY DRAGGABLE
           arrows={true} // FIX SO ARROW SHOWS
           responsive={[
             {
               breakpoint: 1024,
               settings: {
-                slidesToShow: 5,
-                slidesToScroll: 5,
+                slidesToShow: 6,
+                slidesToScroll: 6,
                 infinite: true,
                 dots: false,
               },
@@ -205,8 +205,8 @@ const TrendingContent: React.FC = () => {
           className="carousel-item"
           dots={false}
           infinite={true}
-          slidesToShow={6}
-          slidesToScroll={6}
+          slidesToShow={7}
+          slidesToScroll={7}
           initialSlide={0}
           arrows={true}
           responsive={[
@@ -254,8 +254,8 @@ const TrendingContent: React.FC = () => {
           className="carousel-item"
           dots={false}
           infinite={true}
-          slidesToShow={6}
-          slidesToScroll={6}
+          slidesToShow={7}
+          slidesToScroll={7}
           initialSlide={0}
           responsive={[
             {
@@ -302,8 +302,8 @@ const TrendingContent: React.FC = () => {
           className="carousel-item"
           dots={false}
           infinite={true}
-          slidesToShow={6}
-          slidesToScroll={6}
+          slidesToShow={7}
+          slidesToScroll={7}
           initialSlide={0}
           responsive={[
             {

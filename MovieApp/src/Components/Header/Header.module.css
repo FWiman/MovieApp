@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css?family=Audiowide");
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px; /* Adjust height as needed */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  padding: 0 20px;
+  box-sizing: border-box;
+  background: linear-gradient(0.25turn, #56387a, #99e4f3, #3f77bd);
+}
+
+.logoLinksContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 5rem;
+  width: 5rem;
+}
+
+.navList {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navLinks {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+
+.navLinks li {
+  list-style-type: none;
+  font-family: "AudioWide", sans-serif;
+  font-weight: normal;
+  margin-right: 20px; /* Add spacing between links */
+}
+
+.navLinks li:last-child {
+  margin-right: 0; /* Remove margin from last link */
+}
+
+.navLinks li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.navLinks li a:hover {
+  font-size: 1.1rem;
+  opacity: 1;
+}
+
+.navLinks li:not(:hover) a {
+  opacity: 0.6;
+}
+
+.searchIcon {
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.searchBar {
+  width: 0;
+  opacity: 0;
+  padding: 5px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 4px;
+  transition: width 0.4s ease, opacity 0.4s ease;
+}
+
+.searchBar.expanded {
+  width: 300px;
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    height: 50px;
+  }
+
+  .logoLinksContainer {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+
+  .navList {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .navLinks {
+    margin: 5px 0; /* Adjust margin for links */
+  }
+
+  .navLinks li {
+    margin: 5px 0; /* Adjust margin for list items */
+  }
+
+  .navLinks li a {
+    display: flex;
+    text-decoration: none;
+    color: white;
+    font-size: 0.9rem;
+    padding-left: 0.3rem;
+  }
+
+  .searchIcon {
+    margin: 0.8rem; /* Add space between links and search icon */
+  }
+
+  .searchContainer {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .searchBar {
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    transform: translateX(-90%);
+    width: calc(100% - 70px); /* Adjust as needed */
+    max-width: 200px; /* Adjust as needed */
+    background-color: whitesmoke;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    height: 0;
+  }
+
+  .searchBar.expanded {
+    height: auto;
+    padding: 10px;
+  }
+}

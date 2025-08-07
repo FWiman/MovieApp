@@ -75,12 +75,12 @@ export const getTrailer = async (
     const trailerData = response.data.results;
 
     const trailer = trailerData.find(
-      (video: { type: string; site: string }) =>
+      (video: { type: string; site: string; key: string }) =>
         video.type === "Trailer" && video.site === "YouTube"
     );
 
     if (trailer) {
-      return `https://www.youtube.com/watch?v=${trailer.key}`;
+      return `https://www.youtube.com/embed/${trailer.key}`;
     }
   } catch (error) {
     console.error("Error fetching trailer data:", error);

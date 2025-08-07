@@ -1,0 +1,32 @@
+.pageWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.bottomSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 20px; /* Adding margin to separate from top section */
+}
+
+.carouselContainer {
+  width: 90%;
+  margin: 20px 0;
+}
+
+.heading {
+  font-family: "Audiowide", sans-serif;
+  font-size: 24px;
+  color: whitesmoke;
+  text-shadow: 2px 2px 4px black;
+}
+
+.carousel {
+  width: 100%;
+}
